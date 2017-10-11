@@ -58,14 +58,46 @@ Step 6: Apply “weighted_img” function to draw lines on the image.
 
 ### 2. Identify potential shortcomings with your current pipeline
 
+I could think of applying more Filters to reduce errors, or errosion filter to stregthen withe lane lines
 
-One potential shortcoming would be what would happen when ... 
 
-Another shortcoming could be ...
+### How to improve the lane lines detection Software?
+
+Knowing exactly where the camera is positioned. One option could be to draw helper lines. For example, one middle line from 
+
+the driver perspective and other two border lines (left and right from the car). When detecting lane lines, you would need to 
+
+perform:
+
+1. Distance measurement to compute the distance of the detected lane lines to the border line.
+
+2. Have a threshold value for the distance to filter out lines which are too far away.
+
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+Parameter Tuning 
 
-Another potential improvement could be to ...
+Drawing, stabilizing the the lane lines, by taking average values, or taking average slope
+
+
+### Conclusion:
+
+First, it was my first project of this kind. It was very interesting to perform different image processing techniques to find 
+
+the edges and hence detect lane lines on the road.
+
+I think using region of interest to detect lane lines, is surely one possible way to do it. But is has some disadvantages. It 
+
+needs to be specifically defined to the camera position. Settings need always to be performed manually to improve correctness 
+
+of the lane detection system.
+
+In summary, I got myself familiar with OpenCV library. Understanding how to convert and RGB image to grayscale. Applying 
+
+Gaussian blur filter to remove noise from the image. Applying Canny edge algorithm to detect high gradient changes in the 
+
+image and therefore the edges. Also doing some linear algebra, applying extrapolation to find new set of points based on the 
+
+lines which were extracted through Hough transformation.
