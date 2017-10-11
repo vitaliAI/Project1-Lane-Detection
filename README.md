@@ -2,8 +2,6 @@
 
 ## Writeup Template
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Finding Lane Lines on the Road**
@@ -28,6 +26,22 @@ My pipeline consisted of 5 steps. First, I converted the images to grayscale, th
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
+
+### Pipeline:
+
+Step 1: Grayscale
+Step 2: Gaussian Blur Filter
+Step 3: Canny Edge Detection
+Step 4: Set Region of Interest
+Step 5: Hough Transformation
+•	Draw lines
+•	Use x1,y1,x2,y2 Data points
+•	To filter out lines with low slope classify lines or data points into:
+•	Left line, Right line
+•	Apply extrapolation to find new x,y values to draw lines on the canvas
+Step 6: Apply “weighted_img” function to draw lines on the image.
+
+
 
 ![alt text][image1]
 
